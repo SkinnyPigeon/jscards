@@ -10,10 +10,19 @@ describe( 'The game: ', function() {
     cards.build();
     cards.shuffle();
 
-    player1 = new Player;
+    jeff = new Player( "Jeff" );
+
+    game = new Game();
+
   })
 
-  // it( 'Should be able to take in a card', function() {
-  //   assert.deepEqual( 1, game.player1)
-  // })
+  it( 'Should have no players to begin with', function() {
+    assert.equal( 0, game.players.length )
+  })
+
+  it( 'Should be able to take in a player', function() {
+    game.addPlayer( jeff );
+
+    assert.deepEqual( jeff, game.players[0] )
+  })
 })
